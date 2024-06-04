@@ -6,14 +6,16 @@ import s from "./s.module.scss";
 import ModalCart from "../ModalCart";
 const UserBar = () => {
   const [openCart, setOpenCart] = useState(false);
+  const [openMobile, setOpenMobile] = useState(false);
   // TEMP
 
   const isAuth = false;
 
-
   useEffect(() => {
-    openCart ? document.body.style.overflow = "hidden" : document.body.style.overflow = "visible"
-  }, [openCart])
+    openCart
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "visible");
+  }, [openCart]);
 
   return (
     <>
@@ -60,6 +62,14 @@ const UserBar = () => {
         </li>
       </ul>
       {openCart && <ModalCart setOpenCart={setOpenCart} />}
+      <button
+        onClick={() => setOpenMobile((prev) => !prev)}
+        className={`${s.mobileBtn} ${openMobile ? s.active : ""}`}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </>
   );
 };

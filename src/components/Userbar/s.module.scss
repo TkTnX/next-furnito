@@ -1,5 +1,46 @@
 .wrapper {
-    display: flex;
-    align-items: center;
-    gap: 45px;
+  display: flex;
+  align-items: center;
+  gap: 45px;
+
+  @media (max-width: 1024px) {
+    gap: 15px;
+  }
+
+  @media (max-width: 456px) {
+    display: none;
+  }
+}
+
+.mobileBtn {
+  width: 30px;
+  height: 30px;
+  display: none;
+  align-items: center;
+
+  span {
+    width: 100%;
+    background-color: #000;
+    height: 4px;
+    border-radius: 50px;
+    transition: all 0.2s ease-in;
+  }
+
+  @media (max-width: 456px) {
+      display: grid;
+  }
+}
+
+.active {
+  span {
+    &:first-child {
+      transform: translateY(8px) rotate(45deg);
+    }
+    &:nth-child(2) {
+      opacity: 0;
+    }
+    &:last-child {
+      transform: translateY(-12px) rotate(-45deg);
+    }
+  }
 }

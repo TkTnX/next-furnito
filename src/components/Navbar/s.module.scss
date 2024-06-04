@@ -2,6 +2,14 @@
     display: flex;
     align-items: center;
     gap: 75px;
+
+    @media (max-width: 1024px) {
+        gap: 25px;
+    }
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 }
 
 .active {
