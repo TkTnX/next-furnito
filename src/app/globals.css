@@ -1,0 +1,26 @@
+:root {
+  --text: #000;
+  --accent: #b88e2f;
+  --accentLight: #f9f1e7;
+
+  --container-width: 1286px;
+
+  --font-size: 16px;
+  --font-weight: 500;
+}
+
+body {
+  color: var(--text);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+}
+
+.container {
+  max-width: var(--container-width);
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+a {
+  color: inherit;
+}

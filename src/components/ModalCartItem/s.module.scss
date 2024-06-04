@@ -1,0 +1,26 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info {
+  display: grid;
+  gap: 8px;
+
+  h5 {
+    font-weight: 400;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 12px;
+
+    span {
+        font-weight: 500;
+        color: var(--accent);
+    }
+  }
+}
+
+

@@ -1,0 +1,93 @@
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  overflow: auto;
+}
+
+.cart {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #fff;
+  padding: 28px 40px 28px 27px;
+
+  overflow: auto;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  h2 {
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 85%;
+    height: 1px;
+    bottom: -25px;
+    background-color: #d9d9d9;
+  }
+}
+
+.items {
+  display: grid;
+  gap: 20px;
+  margin-top: 68px;
+  max-height: 500px;
+  overflow: auto;
+  scrollbar-width: 0;
+  &::-webkit-scrollbar {
+    color: inherit;
+  }
+}
+
+.total {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 400;
+  position: relative;
+  span {
+    color: var(--accent);
+    font-weight: 600;
+    display: block;
+    margin-right: 70px;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    left: -27px;
+    right: -40px;
+    bottom: -23px;
+
+    background: #d9d9d9;
+  }
+}
+
+.links {
+  margin-top: 49px;
+
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  a {
+    padding: 6px 30px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    transition: all 0.2s;
+    &:hover {
+      background: black;
+      color: #fff;
+    }
+  }
+}
