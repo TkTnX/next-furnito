@@ -1,12 +1,14 @@
 .backdrop {
-  position: absolute;
+  position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.2);
   overflow: auto;
+  z-index: 1;
 }
 
 .cart {
   position: absolute;
+  z-index: 2;
   right: 0;
   top: 0;
   background: #fff;

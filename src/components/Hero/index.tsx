@@ -3,7 +3,7 @@ import s from "./s.module.scss";
 import Link from "next/link";
 const Hero = () => {
   return (
-    <div className={s.wrapper}>
+    <section className={s.wrapper}>
       <div className={`container ${s.block}`}>
         <h2 className={s.hint}>New Arrival</h2>
         <h1 className={s.title}>
@@ -15,7 +15,7 @@ const Hero = () => {
         </p>
         <Link className={s.btn} href="/shop">BUY NOW</Link>
       </div>
-    </div>
+    </section>
   );
 };
 

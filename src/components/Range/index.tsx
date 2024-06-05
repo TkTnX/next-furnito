@@ -19,7 +19,7 @@ const data = [
 
 const Range = () => {
   return (
-    <div className={`container ${s.wrapper}`}>
+    <section className={`container ${s.wrapper}`}>
       <h3 className={s.title}>Browse The Range</h3>
       <p className={s.subtitle}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -36,7 +36,7 @@ const Range = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };
 

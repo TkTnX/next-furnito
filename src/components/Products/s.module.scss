@@ -1,0 +1,10 @@
+.wrapper {
+  margin-top: 112px;
+}
+
+.list {
+  margin-top: 32px;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}

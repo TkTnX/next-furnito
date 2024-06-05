@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import Products from "@/components/Products";
 import Range from "@/components/Range";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <main>
       <Hero />
       <Range />
+      <Products />
     </main>
   );
 }
