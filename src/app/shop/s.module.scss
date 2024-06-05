@@ -1,0 +1,57 @@
+.top {
+  background-color: #999;
+  background-image: url("/images/shop/bg.jpg");
+  background-position: center center; /* x y */
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 316px;
+  text-align: center;
+  position: relative;
+}
+
+.text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  font-size: 48px;
+  margin-bottom: 3px;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+
+  p {
+    font-weight: 300;
+  }
+}
+
+.achievementsWrapper {
+  margin-top: 85px;
+  margin-bottom: -50px;
+  background: #faf3ea;
+  padding: 105px 0;
+}
+
+.achievements {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+
+  h5 {
+    font-weight: 600;
+    font-size: 25px;
+    color: #242424;
+  }
+
+  p {
+    font-size: 20px;
+    color: #898989;
+  }
+}

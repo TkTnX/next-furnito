@@ -1,0 +1,41 @@
+.bg {
+  background: #f9f1e7;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 31px 0;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+  }
+
+  input,
+  select {
+    background: #fff;
+    padding: 12px 18px;
+  }
+}
+
+.maxItemsLength {
+  width: 55px;
+  height: 55px;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+}
+
+

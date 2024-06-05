@@ -1,17 +1,17 @@
 import React from "react";
 import s from "./s.module.scss";
 import Product from "../Product";
-const Products = () => {
+import { getProducts } from "@/libs/data";
+const Products = async () => {
+  const products = await getProducts();
   return (
     <section className={`container ${s.wrapper}`}>
       <h2 className="title-2">Our Products</h2>
 
       <ul className={s.list}>
         {/* Products list */}
-        <Product />
-        <Product />
-        <Product />
-        <Product />
+        {products &&
+          products.map((item) => <Product key={item._id} {...item._doc} />)}
       </ul>
     </section>
   );
