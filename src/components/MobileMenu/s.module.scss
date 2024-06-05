@@ -1,0 +1,20 @@
+.wrapper {
+  position: absolute;
+  inset: 0;
+  background-color: #fff;
+  z-index: 3;
+  padding: 80px;
+  text-align: center;
+}
+
+.list {
+  display: grid;
+  gap: 20px;
+}
+
+.userList {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  gap: 20px;
+}

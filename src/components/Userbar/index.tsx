@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import s from "./s.module.scss";
 import ModalCart from "../ModalCart";
+import MobileMenu from "../MobileMenu";
 const UserBar = () => {
   const [openCart, setOpenCart] = useState(false);
   const [openMobile, setOpenMobile] = useState(false);
@@ -12,10 +13,10 @@ const UserBar = () => {
   const isAuth = false;
 
   useEffect(() => {
-    openCart
+    openCart || openMobile
       ? (document.body.style.overflow = "hidden")
       : (document.body.style.overflow = "visible");
-  }, [openCart]);
+  }, [openCart, openMobile]);
 
   return (
     <>
@@ -70,6 +71,9 @@ const UserBar = () => {
         <span></span>
         <span></span>
       </button>
+      {openMobile && (
+        <MobileMenu isAuth={isAuth} setOpenMobile={setOpenMobile} />
+      )}
     </>
   );
 };

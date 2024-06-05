@@ -17,6 +17,8 @@
   height: 30px;
   display: none;
   align-items: center;
+  position: relative;
+  z-index: 4;
 
   span {
     width: 100%;
@@ -27,7 +29,7 @@
   }
 
   @media (max-width: 456px) {
-      display: grid;
+    display: grid;
   }
 }
 

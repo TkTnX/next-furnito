@@ -4,7 +4,7 @@ import s from "./s.module.scss";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const data = [
+export const data = [
   {
     path: "/",
     name: "Home",
