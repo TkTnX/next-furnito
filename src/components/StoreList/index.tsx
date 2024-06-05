@@ -4,13 +4,8 @@ import Product from '../Product';
 const StoreList = () => {
   return (
     <div className={`container ${s.list}`}>
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
+      <Product title={''} image={''} price={0} />
+
     </div>
   );
 }
