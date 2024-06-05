@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header className={`container ${s.wrapper}`}>
       <Link className={s.logo} href="/">
-        <Image src="/images/logo.svg" width={50} height={30} alt="logo" />
+        <Image src="/images/logo.svg" width={50} height={33} alt="logo" />
         <h4 className={s.title}>Furnito</h4>
       </Link>
       <nav>

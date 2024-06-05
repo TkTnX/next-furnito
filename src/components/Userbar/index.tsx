@@ -25,7 +25,7 @@ const UserBar = () => {
           <Link href={isAuth ? "/profile" : "/register"}>
             <Image
               src="/images/header/04.svg"
-              width={23}
+              width={24}
               height={20}
               alt="user btn"
             />
@@ -35,8 +35,8 @@ const UserBar = () => {
           <Link href="/shop">
             <Image
               src="/images/header/01.svg"
-              width={23}
-              height={20}
+              width={25}
+              height={25}
               alt="user btn"
             />
           </Link>
@@ -45,8 +45,8 @@ const UserBar = () => {
           <Link href={isAuth ? "/favorite" : "/register"}>
             <Image
               src="/images/header/02.svg"
-              width={23}
-              height={20}
+              width={26}
+              height={24}
               alt="user btn"
             />
           </Link>

@@ -29,7 +29,13 @@ const Range = () => {
           <li className={s.liItem} key={item.title}>
             <div className={s.item}>
               <Link className={s.link} href="/shop">
-                <Image src={item.img} className={s.img} fill alt={item.title} />
+                <Image
+                  sizes="any"
+                  src={item.img}
+                  className={s.img}
+                  fill
+                  alt={item.title}
+                />
               </Link>
               <h6 className={s.itemTitle}>{item.title}</h6>
             </div>

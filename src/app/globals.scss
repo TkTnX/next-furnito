@@ -15,8 +15,6 @@ body {
   font-weight: var(--font-weight);
 }
 
-
-
 .container {
   max-width: var(--container-width);
   padding: 0 15px;
@@ -33,4 +31,11 @@ a {
   line-height: 1.2;
   text-align: center;
   color: #3a3a3a;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
+  @media (max-width: 456px) {
+    font-size: 24px;
+  }
 }

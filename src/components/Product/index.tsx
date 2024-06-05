@@ -6,11 +6,11 @@ const Product = () => {
   return (
     <div className={s.item}>
       <div className={s.img}>
-        <Image src="/images/Products/01.jpg" alt="title" fill />
-          </div>
-          <div className={s.onHover}>
-            <Controls />
-          </div>
+        <Image src="/images/Products/01.jpg" sizes="any" alt="title" fill />
+      </div>
+      <div className={s.onHover}>
+        <Controls />
+      </div>
       <div className={s.bottom}>
         <h5 className={s.title}>Syltherine</h5>
         <p className={s.desc}>Stylish cafe chair</p>
