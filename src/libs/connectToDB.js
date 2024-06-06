@@ -15,5 +15,6 @@ export const connectToDb = async () => {
   } catch (error) {
     console.log("Не удалось подключиться к базе данных!");
     console.log(error);
+    return { error: "Не удалось подключиться к базе данных!" };
   }
 };

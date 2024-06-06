@@ -1,6 +1,7 @@
 import { revalidatePath } from "next/cache";
 import { connectToDb } from "./connectToDB";
 import { Product } from "./models";
+import { ProductType } from "@/components/Product/index";
 export const getProducts = async () => {
   try {
     connectToDb();
@@ -9,10 +10,9 @@ export const getProducts = async () => {
     return products;
   } catch (error) {
     console.log(error);
+    return { error: "Не удалось получить продукты" };
   }
 };
-
-
 
 export const getProduct = async (slug) => {
   try {
@@ -22,5 +22,6 @@ export const getProduct = async (slug) => {
     return product;
   } catch (error) {
     console.log(error);
+    return { error: "Не удалось получить продукт" };
   }
 };

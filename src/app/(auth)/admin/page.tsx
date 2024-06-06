@@ -1,9 +1,13 @@
-import React from 'react'
+import AddPostForm from "@/components/AddPostForm";
+import React from "react";
 
 const AdminPage = () => {
   return (
-    <div>AdminPage</div>
-  )
-}
+    <div>
+      <h3>Создание продукта</h3>
+      <AddPostForm />
+    </div>
+  );
+};
 
-export default AdminPage
+export default AdminPage;
