@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import s from "./s.module.scss";
 import Image from "next/image";
 const options = [
@@ -16,12 +16,20 @@ const options = [
   },
 ];
 
-const Filter = () => {
+const Filter = ({
+  productsPerView,
+  productsLength,
+}: {
+  productsPerView: number;
+  productsLength: number;
+}) => {
   return (
     <div className={s.bg}>
       <div className="container">
         <div className={s.wrapper}>
-          <p>Showing 1-16 of 32 results</p>
+          <p>
+            Showing 1-{productsPerView} of {productsLength} results
+          </p>
           <div>
             <form className={s.form}>
               <label>
@@ -30,7 +38,7 @@ const Filter = () => {
                   type="number"
                   placeholder="16"
                   max={24}
-                  defaultValue={16}
+                  defaultValue={productsPerView}
                   className={s.maxItemsLength}
                 />
               </label>
@@ -52,8 +60,8 @@ const Filter = () => {
                 <Image
                   src="/images/header/01.svg"
                   alt="search"
-                  width={26}
-                  height={24}
+                  width={25}
+                  height={25}
                 />
               </button>
             </form>

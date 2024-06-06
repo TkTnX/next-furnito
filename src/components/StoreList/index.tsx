@@ -1,13 +1,18 @@
-import React from 'react'
-import s from "./s.module.scss"
-import Product from '../Product';
-const StoreList = () => {
+import React from "react";
+import s from "./s.module.scss";
+import Product, { ProductType } from "../Product";
+const StoreList = ({ productsPerView, products }: { productsPerView: number, products: ProductType[] }) => {
+
   return (
     <div className={`container ${s.list}`}>
-      <Product title={''} image={''} price={0} />
-
+      {products &&
+        products
+          .slice(0, productsPerView)
+          .map((product: ProductType) => (
+            <Product key={product._id.toString()} {...product._doc} />
+          ))}
     </div>
   );
-}
+};
 
-export default StoreList
+export default StoreList;

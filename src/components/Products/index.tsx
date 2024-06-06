@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./s.module.scss";
-import Product from "../Product";
+import Product, { ProductType } from "../Product";
 import { getProducts } from "@/libs/data";
 const Products = async () => {
   const products = await getProducts();
@@ -11,7 +11,11 @@ const Products = async () => {
       <ul className={s.list}>
         {/* Products list */}
         {products &&
-          products.map((item) => <Product key={item._id} {...item._doc} />)}
+          products
+            .slice(0, 8)
+            .map((item: ProductType) => (
+              <Product key={item._id.toString()} {...item._doc} />
+            ))}
       </ul>
     </section>
   );

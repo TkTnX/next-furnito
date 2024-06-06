@@ -2,8 +2,7 @@ import React from "react";
 import s from "./s.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import Filter from "@/components/Filter";
-import StoreList from "@/components/StoreList";
+import Shop from "@/components/Shop";
 
 const achievementsList = [
   {
@@ -38,12 +37,11 @@ const ShopPage = () => {
               src="/images/shop/arrow.svg"
               alt="arrow"
             />
-            <p>Store</p>
+            <p>Shop</p>
           </div>
         </div>
       </div>
-      <Filter />
-      <StoreList />
+      <Shop />
       <div className={s.achievementsWrapper}>
         <ul className={`${s.achievements} container`}>
           {achievementsList.map((item) => (

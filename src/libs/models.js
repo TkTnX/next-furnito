@@ -17,6 +17,15 @@ const productSchema = mongoose.Schema({
   discount: {
     type: Number,
   },
+  desc: {
+    type: String,
+    required: true,
+    min: 5,
+  },
+  slug: {
+    type: String,
+    required: true,
+  },
 });
 
 export const Product =

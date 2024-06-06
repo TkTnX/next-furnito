@@ -43,6 +43,12 @@
   display: flex;
   justify-content: space-between;
   gap: 10px;
+  flex-wrap: wrap;
+
+  @media (max-width: 950px) {
+    justify-content: center;
+    gap: 30px;
+  }
 
   h5 {
     font-weight: 600;

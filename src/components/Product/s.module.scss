@@ -64,10 +64,20 @@
 }
 
 .controls {
+  position: absolute;
+  inset: 0;
+}
+
+.btns {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  max-width: max-content;
 
   button {
     font-weight: 600;

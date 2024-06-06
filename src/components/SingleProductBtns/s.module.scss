@@ -1,0 +1,27 @@
+.btns {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  padding: 20px 15px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.addToCart {
+  font-weight: 400;
+  font-size: 20px;
+  padding: 17px 48px;
+  border: 1px solid black;
+  border-radius: 15px;
+  transition: all 0.2s;
+  &:hover {
+    opacity: 0.5;
+  }
+}

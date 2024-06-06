@@ -6,8 +6,20 @@ export const getProducts = async () => {
     connectToDb();
     const products = await Product.find();
 
-    revalidatePath("/");
     return products;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+
+export const getProduct = async (slug) => {
+  try {
+    connectToDb();
+    const product = await Product.findOne({ slug: slug });
+
+    return product;
   } catch (error) {
     console.log(error);
   }
