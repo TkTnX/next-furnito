@@ -6,7 +6,7 @@ import { ObjectId } from "mongoose";
 
 export type ProductType = {
   _doc: ProductType;
-  _id: ObjectId;
+  _id: string;
   title: string;
   image: string;
   price: number;
@@ -16,21 +16,15 @@ export type ProductType = {
   sizes: string[];
 };
 
-const Product: React.FC<ProductType> = ({
-  title,
-  image,
-  price,
-  discount,
-  slug,
-  desc,
-}) => {
+const Product: React.FC<ProductType> = (props) => {
+  const { title, image, price, discount, slug, desc } = props;
   return (
     <div className={s.item}>
       <div className={s.img}>
         <Image src={image} sizes="any" alt={title} fill />
       </div>
       <div className={s.onHover}>
-        <Controls slug={slug} />
+        <Controls props={props} slug={slug} />
       </div>
       <div className={s.bottom}>
         <h5 className={s.title}>{title}</h5>

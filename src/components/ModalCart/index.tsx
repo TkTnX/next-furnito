@@ -4,11 +4,15 @@ import s from "./s.module.scss";
 import Image from "next/image";
 import ModalCartItem from "../ModalCartItem";
 import Link from "next/link";
+import { useCartStore } from "@/store";
 
+// bottom btns
 const data = ["Cart", "Checkout", "Comparison"];
 
 const ModalCart = ({ setOpenCart }: { setOpenCart: (b: boolean) => void }) => {
   const cartRef = useRef<HTMLDivElement>(null);
+  const cartItems = useCartStore((state) => state.items);
+  const totalPrice = useCartStore((state) => state.totalPrice);
 
   const handleClickOutside = (event: MouseEvent) => {
     if (cartRef.current && !cartRef.current?.contains(event.target as Node)) {
@@ -39,15 +43,23 @@ const ModalCart = ({ setOpenCart }: { setOpenCart: (b: boolean) => void }) => {
           </button>
         </div>
         {/* ITEMS */}
-        <div className={s.items}>
-          <ModalCartItem />
-        </div>
+        {cartItems.length === 0 ? (
+          <p className={s.emptyCart}>
+            Корзина пуста! <br /> добавьте 1 товар в корзину
+          </p>
+        ) : (
+          <div className={s.items}>
+            {cartItems.map((item) => (
+              <ModalCartItem {...item} key={item._id} />
+            ))}
+          </div>
+        )}
 
         {/* BOTTOM */}
         <div className={s.bottom}>
           <div className={s.total}>
             <p>Subtotal</p>
-            <span>Rs. 520,000.00</span>
+            <span>Rs. {totalPrice}</span>
           </div>
           <div className={s.links}>
             {data.map((item) => (

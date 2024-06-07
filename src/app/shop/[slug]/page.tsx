@@ -48,7 +48,7 @@ const SingleProductPage = async ({
           {product.sizes.length !== 0 && (
             <SingleProductSizes sizes={product.sizes} />
           )}
-          <SingleProductBtns />
+          <SingleProductBtns product={product} />
         </div>
       </div>
     </div>

@@ -1,8 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import s from "./s.module.scss";
-const SingleProductBtns = () => {
+import { useCartStore } from "@/store";
+import { ProductType } from "../Product";
+const SingleProductBtns = ({ product }: { product: ProductType }) => {
   const [count, setCount] = useState(1);
+  const addToCart = useCartStore((state) => state.addToCart);
 
   const handleChangeCount = (arg: "i" | "d") => {
     if (arg === "d" && count !== 1) {
@@ -20,7 +23,9 @@ const SingleProductBtns = () => {
         <p>{count}</p>
         <button onClick={() => handleChangeCount("i")}>+</button>
       </div>
-      <button className={s.addToCart}>Add To Cart</button>
+      <button onClick={() => addToCart(product)} className={s.addToCart}>
+        Add To Cart
+      </button>
     </div>
   );
 };
