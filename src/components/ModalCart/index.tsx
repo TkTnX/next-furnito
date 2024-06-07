@@ -22,7 +22,7 @@ const ModalCart = ({ setOpenCart }: { setOpenCart: (b: boolean) => void }) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  });
 
   return (
     <div className={s.backdrop}>

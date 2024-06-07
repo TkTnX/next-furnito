@@ -26,6 +26,9 @@ const productSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  sizes: {
+    type: Array,
+  },
 });
 
 export const Product =

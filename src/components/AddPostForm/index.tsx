@@ -12,6 +12,7 @@ const AddPostForm = () => {
       <input type="text" placeholder="image" name="image" required />
       <input type="number" placeholder="price" name="price" required />
       <input type="text" placeholder="slug" name="slug" required />
+      <input type="text" placeholder="sizes [array]*" name="sizes" />
       <input type="number" placeholder="discount*" name="discount" />
       <button type="submit">Добавить продукт</button>
       {state && state.error}

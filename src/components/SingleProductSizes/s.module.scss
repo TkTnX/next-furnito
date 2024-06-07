@@ -1,0 +1,32 @@
+.wrapper {
+  margin-top: 22px;
+}
+
+.list {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  @media (max-width: 840px) {
+    justify-content: center;
+  }
+}
+
+.size {
+  width: 30px;
+  height: 30px;
+  font-weight: 400;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f1e7;
+  transition: all 0.2s ease-in;
+  border-radius: 5px;
+}
+
+.active {
+  background-color: var(--accent);
+  color: #fff;
+}

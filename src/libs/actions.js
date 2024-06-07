@@ -2,7 +2,7 @@
 import { connectToDb } from "./connectToDB";
 import { Product } from "./models";
 export const addPost = async (prevState, formData) => {
-  const { title, desc, image, price, slug, discount } =
+  const { title, desc, image, price, slug, discount, sizes } =
     Object.fromEntries(formData);
 
   try {
@@ -15,6 +15,7 @@ export const addPost = async (prevState, formData) => {
       price,
       slug,
       discount,
+      sizes: sizes.split(", "),
     });
 
     await newProduct.save();

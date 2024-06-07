@@ -4,6 +4,7 @@ import s from "./s.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 import SingleProductBtns from "@/components/SingleProductBtns";
+import SingleProductSizes from "@/components/SingleProductSizes";
 const SingleProductPage = async ({
   params,
 }: {
@@ -44,6 +45,9 @@ const SingleProductPage = async ({
           <h2 className={s.title}>{product.title}</h2>
           <p className={s.price}>Rs. {product.price}</p>
           <p className={s.desc}>{product.desc}</p>
+          {product.sizes.length !== 0 && (
+            <SingleProductSizes sizes={product.sizes} />
+          )}
           <SingleProductBtns />
         </div>
       </div>

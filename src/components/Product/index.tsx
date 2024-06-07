@@ -13,6 +13,7 @@ export type ProductType = {
   discount?: number;
   slug: string;
   desc: string;
+  sizes: string[];
 };
 
 const Product: React.FC<ProductType> = ({
