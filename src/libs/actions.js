@@ -38,6 +38,5 @@ export const deleteProduct = async (prevState, formData) => {
   } catch (error) {
     console.log(error);
     return { error: "Не удалось удалить продукт" };
-  } finally {
   }
 };

@@ -45,7 +45,7 @@ const ModalCart = ({ setOpenCart }: { setOpenCart: (b: boolean) => void }) => {
         {/* ITEMS */}
         {cartItems.length === 0 ? (
           <p className={s.emptyCart}>
-            Корзина пуста! <br /> добавьте 1 товар в корзину
+            Cart is Empty! <br /> Add 1 product in the Cart!
           </p>
         ) : (
           <div className={s.items}>
