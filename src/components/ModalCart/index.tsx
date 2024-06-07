@@ -50,7 +50,7 @@ const ModalCart = ({ setOpenCart }: { setOpenCart: (b: boolean) => void }) => {
         ) : (
           <div className={s.items}>
             {cartItems.map((item) => (
-              <ModalCartItem {...item} key={item._id} />
+              <ModalCartItem {...item} _id={item._id} key={item._id} />
             ))}
           </div>
         )}

@@ -19,7 +19,17 @@ const Products = async () => {
           products
             .slice(0, 8)
             .map((item: ProductType) => (
-              <Product key={item._id} {...item._doc} />
+              <Product
+                key={item._id}
+                title={item.title}
+                image={item.image}
+                price={item.price}
+                discount={item.discount}
+                slug={item.slug}
+                desc={item.desc}
+                _id={item._id.toString()}
+                sizes={item.sizes}
+              />
             ))}
       </ul>
     </section>

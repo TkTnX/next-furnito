@@ -12,6 +12,20 @@ const SingleProductPage = async ({
 }) => {
   const { slug } = params;
   const product = await getProduct(slug);
+  const { _id, title, desc, price, image, sizes, discount } = product;
+
+  const simpleProduct = {
+    _id: _id.toString(),
+    title,
+    desc,
+    price,
+    image,
+    discount,
+    slug,
+    sizes,
+  };
+
+
   return (
     <div>
       <div className={s.breadcrumbsWrapper}>
@@ -48,7 +62,7 @@ const SingleProductPage = async ({
           {product.sizes.length !== 0 && (
             <SingleProductSizes sizes={product.sizes} />
           )}
-          <SingleProductBtns product={product} />
+          <SingleProductBtns product={simpleProduct} />
         </div>
       </div>
     </div>

@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
 import s from "./s.module.scss";
-import { addPost } from "@/libs/actions";
+import { addProduct } from "@/libs/actions";
 import { useFormState } from "react-dom";
-const AddPostForm = () => {
-  const [state, formAction] = useFormState(addPost, undefined);
+const AddProductForm = () => {
+  const [state, formAction] = useFormState(addProduct, undefined);
   return (
     <form action={formAction} className={s.form}>
       <input type="text" placeholder="title" name="title" required />
@@ -20,4 +20,4 @@ const AddPostForm = () => {
   );
 };
 
-export default AddPostForm;
+export default AddProductForm;

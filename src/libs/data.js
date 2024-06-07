@@ -1,7 +1,5 @@
-import { revalidatePath } from "next/cache";
 import { connectToDb } from "./connectToDB";
 import { Product } from "./models";
-import { ProductType } from "@/components/Product/index";
 export const getProducts = async () => {
   try {
     connectToDb();

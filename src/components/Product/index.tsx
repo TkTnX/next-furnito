@@ -2,10 +2,8 @@ import Image from "next/image";
 import React from "react";
 import s from "./s.module.scss";
 import Controls from "./Controls";
-import { ObjectId } from "mongoose";
 
 export type ProductType = {
-  _doc: ProductType;
   _id: string;
   title: string;
   image: string;
@@ -17,7 +15,7 @@ export type ProductType = {
 };
 
 const Product: React.FC<ProductType> = (props) => {
-  const { title, image, price, discount, slug, desc } = props;
+  const { title, image, price, discount, slug, desc, _id } = props;
   return (
     <div className={s.item}>
       <div className={s.img}>
