@@ -1,4 +1,5 @@
 "use server";
+import { revalidatePath } from "next/cache";
 import { connectToDb } from "./connectToDB";
 import { Product } from "./models";
 export const addProduct = async (prevState, formData) => {
@@ -18,6 +19,7 @@ export const addProduct = async (prevState, formData) => {
       sizes: sizes.split(", "),
     });
 
+    revalidatePath("/shop");
     await newProduct.save();
   } catch (error) {
     console.log(error);
@@ -31,6 +33,7 @@ export const deleteProduct = async (prevState, formData) => {
     connectToDb();
 
     await Product.findOneAndDelete({ slug: slug });
+    revalidatePath("/shop");
     return { error: "Продукт удалён" };
   } catch (error) {
     console.log(error);
