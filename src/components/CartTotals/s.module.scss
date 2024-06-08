@@ -1,0 +1,37 @@
+.wrapper {
+  background-color: #f9f1e7;
+  padding: 15px 75px 80px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 61px;
+}
+
+.list {
+  display: grid;
+  gap: 31px;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.btn {
+  text-align: center;
+  width: 100%;
+  margin-top: 42px;
+  padding: 14px 59px;
+  border: 1px solid #000;
+  border-radius: 15px;
+  font-size: 20px;
+  transition: all 0.2s ease-in;
+
+  &:hover {
+    background-color: #000;
+    color: #fff;
+  }
+}

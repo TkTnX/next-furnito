@@ -1,0 +1,21 @@
+.cart {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.top {
+  background-color: #f9f1e7;
+}
+
+.infoList {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 100px;
+  justify-content: space-between;
+}
+
+.left {
+  flex-grow: 1;
+}
