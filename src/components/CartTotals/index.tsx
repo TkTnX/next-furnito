@@ -8,11 +8,11 @@ const CartTotals = () => {
       <ul className={s.list}>
         <li>
           <p>Subotal</p>
-          <p>Rs. 250,000.00</p>
+          <p className={s.subtotal}>Rs. 250,000.00</p>
         </li>
         <li>
           <p>Total</p>
-          <p>Rs. 250,000.00</p>
+          <p className={s.total}>Rs. 250,000.00</p>
         </li>
           </ul>
           

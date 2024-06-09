@@ -1,12 +1,18 @@
 .wrapper {
   background-color: #f9f1e7;
   padding: 15px 75px 80px;
+
+  @media (max-width: 550px) {
+      padding: 5px 35px 40px;
+      
+  }
 }
 
 .title {
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 61px;
+  text-align: center;
 }
 
 .list {
@@ -34,4 +40,13 @@
     background-color: #000;
     color: #fff;
   }
+}
+
+.subtotal {
+  color: #9f9f9f;
+}
+
+.total {
+  font-size: 20px;
+  color: #b88e2f;
 }

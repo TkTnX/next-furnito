@@ -3,6 +3,15 @@
   align-items: center;
   justify-content: space-between;
   color: #9f9f9f;
+  flex-wrap: wrap;
+
+  @media (max-width: 950px) {
+    border: 1px solid #9f9f9f;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 10px;
+    gap: 20px;
+  }
 }
 
 .name {
