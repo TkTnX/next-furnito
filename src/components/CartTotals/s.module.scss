@@ -1,10 +1,11 @@
 .wrapper {
   background-color: #f9f1e7;
   padding: 15px 75px 80px;
+  position: sticky;
+  top: 0;
 
   @media (max-width: 550px) {
-      padding: 5px 35px 40px;
-      
+    padding: 5px 35px 40px;
   }
 }
 
