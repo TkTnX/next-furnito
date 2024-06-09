@@ -1,5 +1,59 @@
 .wrapper {
   text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  flex-wrap: wrap-reverse;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.controls {
   display: grid;
-  gap: 50px;
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: flex-start;
+  }
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
+.productTitle {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+    border: 1px solid #9f9f9f;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.formWrapper {
+  display: grid;
+  gap: 20px;
+  border: 1px solid #9f9f9f;
+  max-width: max-content;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 20px;
+
+  input {
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
 }
