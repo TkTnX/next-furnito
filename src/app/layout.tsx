@@ -4,6 +4,7 @@ import "./globals.scss";
 import "@/styles/reset.scss";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SessionProvider } from "next-auth/react";
 
 const font = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],

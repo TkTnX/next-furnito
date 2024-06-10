@@ -1,9 +1,12 @@
-import React from 'react'
+import GoogleBtn from "@/components/GoogleButton";
+import React from "react";
 
 const RegisterPage = () => {
   return (
-    <div>RegisterPage</div>
-  )
-}
+    <div className="container">
+      <GoogleBtn />
+    </div>
+  );
+};
 
-export default RegisterPage
+export default RegisterPage;
