@@ -1,5 +1,5 @@
 import { connectToDb } from "./connectToDB";
-import { Product } from "./models";
+import { Product, User } from "./models";
 export const getProducts = async () => {
   try {
     connectToDb();
@@ -23,3 +23,16 @@ export const getProduct = async (slug) => {
     return { error: "Не удалось получить продукт" };
   }
 };
+
+export const getUsers = async () => {
+  try {
+    connectToDb();
+    const users = await User.find();
+
+    return users;
+  } catch (error) {
+    console.log(error);
+    return { error: "Не удалось получить пользователей" };
+  }
+};
+

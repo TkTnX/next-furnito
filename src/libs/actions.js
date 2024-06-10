@@ -1,7 +1,7 @@
 "use server";
 import { revalidatePath } from "next/cache";
 import { connectToDb } from "./connectToDB";
-import { Product } from "./models";
+import { Product, User } from "./models";
 export const addProduct = async (prevState, formData) => {
   const { title, desc, image, price, slug, discount, sizes } =
     Object.fromEntries(formData);
@@ -38,5 +38,19 @@ export const deleteProduct = async (prevState, formData) => {
   } catch (error) {
     console.log(error);
     return { error: "Не удалось удалить продукт" };
+  }
+};
+
+export const deleteUser = async (prevState, formData) => {
+  const { id } = Object.fromEntries(formData);
+  try {
+    connectToDb();
+
+    await User.findOneAndDelete({ _id: id });
+    revalidatePath("/admin");
+    return { error: "Пользователь удалён" };
+  } catch (error) {
+    console.log(error);
+    return { error: "Не удалось удалить пользователя" };
   }
 };
