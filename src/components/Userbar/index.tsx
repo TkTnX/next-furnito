@@ -5,12 +5,14 @@ import React, { useEffect, useState } from "react";
 import s from "./s.module.scss";
 import ModalCart from "../ModalCart";
 import MobileMenu from "../MobileMenu";
+import { useSession } from "next-auth/react";
 const UserBar = () => {
   const [openCart, setOpenCart] = useState(false);
   const [openMobile, setOpenMobile] = useState(false);
+  const { data, status } = useSession();
   // TEMP
 
-  const isAuth = false;
+  const isAuth = status;
 
   useEffect(() => {
     openCart || openMobile
@@ -22,12 +24,13 @@ const UserBar = () => {
     <>
       <ul className={s.wrapper}>
         <li>
-          <Link href={isAuth ? "/profile" : "/register"}>
+          <Link href={isAuth === "authenticated" ? "/profile" : "/register"}>
             <Image
-              src="/images/header/04.svg"
-              width={24}
-              height={20}
+              src={`${data?.user ? data.user.image : "/images/header/04.svg"}`}
+              width={26}
+              height={24}
               alt="user btn"
+              className={isAuth === "authenticated" ? s.userImg : ""}
             />
           </Link>
         </li>
@@ -42,11 +45,11 @@ const UserBar = () => {
           </Link>
         </li>
         <li>
-          <Link href={isAuth ? "/favorite" : "/register"}>
+          <Link href={isAuth === "authenticated" ? "/favorite" : "/register"}>
             <Image
               src="/images/header/02.svg"
-              width={26}
-              height={24}
+              width={23}
+              height={20}
               alt="user btn"
             />
           </Link>

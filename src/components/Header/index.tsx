@@ -4,6 +4,7 @@ import s from "./s.module.scss";
 import Link from "next/link";
 import Navbar from "../Navbar";
 import UserBar from "../Userbar";
+import { SessionProvider } from "next-auth/react";
 const Header = () => {
   return (
     <header className={`container ${s.wrapper}`}>
@@ -15,7 +16,9 @@ const Header = () => {
         <Navbar />
       </nav>
       <nav>
-        <UserBar />
+        <SessionProvider>
+          <UserBar />
+        </SessionProvider>
       </nav>
     </header>
   );

@@ -8,7 +8,7 @@ const MobileMenu = ({
   isAuth,
 }: {
   setOpenMobile: (b: boolean) => void;
-  isAuth: boolean;
+  isAuth: string;
 }) => {
   return (
     <div className={s.wrapper}>
@@ -23,7 +23,10 @@ const MobileMenu = ({
       </ul>
       <ul className={s.userList}>
         <li>
-          <Link onClick={() => setOpenMobile(false)} href={isAuth ? "/profile" : "/register"}>
+          <Link
+            onClick={() => setOpenMobile(false)}
+            href={isAuth === "authenticated" ? "/profile" : "/register"}
+          >
             <Image
               src="/images/header/04.svg"
               width={23}
@@ -43,7 +46,10 @@ const MobileMenu = ({
           </Link>
         </li>
         <li>
-          <Link onClick={() => setOpenMobile(false)} href={isAuth ? "/favorite" : "/register"}>
+          <Link
+            onClick={() => setOpenMobile(false)}
+            href={isAuth ? "/favorite" : "/register"}
+          >
             <Image
               src="/images/header/02.svg"
               width={23}
