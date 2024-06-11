@@ -1,9 +1,24 @@
-import React from 'react'
+import GoogleBtn from "@/components/GoogleButton";
+import { login } from "@/libs/actions";
+import React from "react";
 
 const LoginPage = () => {
   return (
-    <div>LoginPage</div>
-  )
-}
+    <div>
+      <GoogleBtn text="Login with Google" />
+      <form action={login}>
+        <input type="text" placeholder="username" name="username" required />
+        <input
+          type="password"
+          placeholder="password"
+          name="password"
+          required
+        />
 
-export default LoginPage
+        <button>Login</button>
+      </form>
+    </div>
+  );
+};
+
+export default LoginPage;

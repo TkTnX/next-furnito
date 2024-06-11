@@ -5,9 +5,12 @@ import s from "./s.module.scss";
 import { getProducts, getUsers } from "@/libs/data";
 import { ProductType } from "@/components/Product";
 import DeleteUserForm from "@/components/DeleteUserForm";
+import { auth } from "@/libs/auth";
 const AdminPage = async () => {
   const products = await getProducts();
   const users = await getUsers();
+  const session = await auth();
+  console.log(session);
 
   if ("error" in products || "error" in users) return;
 

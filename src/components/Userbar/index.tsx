@@ -13,6 +13,7 @@ const UserBar = () => {
   // TEMP
 
   const isAuth = status;
+  console.log(data);
 
   useEffect(() => {
     openCart || openMobile
@@ -26,11 +27,15 @@ const UserBar = () => {
         <li>
           <Link href={isAuth === "authenticated" ? "/profile" : "/register"}>
             <Image
-              src={`${data?.user ? data.user.image : "/images/header/04.svg"}`}
+              src={`${
+                data?.user?.image! ? data.user.image : "/images/header/04.svg"
+              }`}
               width={26}
               height={24}
               alt="user btn"
-              className={isAuth === "authenticated" ? s.userImg : ""}
+              className={
+                isAuth === "authenticated" && data?.user?.image ? s.userImg : ""
+              }
             />
           </Link>
         </li>

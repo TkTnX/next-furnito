@@ -5,10 +5,10 @@ const signInFunc = async () => {
   await signIn("google");
 };
 
-const GoogleBtn = () => {
+const GoogleBtn = ({ text }: { text: string }) => {
   return (
     <form action={signInFunc}>
-      <button>Signin with Google</button>
+      <button>{text}</button>
     </form>
   );
 };
