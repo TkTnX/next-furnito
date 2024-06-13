@@ -3,7 +3,7 @@ import { revalidatePath } from "next/cache";
 import { connectToDb } from "./connectToDB";
 import { Product, User } from "./models";
 import bcrypt from "bcrypt";
-import { signIn } from "@/libs/auth";
+import { signIn } from "./auth";
 export const addProduct = async (prevState, formData) => {
   const { title, desc, image, price, slug, discount, sizes } =
     Object.fromEntries(formData);
@@ -96,10 +96,9 @@ export const login = async (formData) => {
     await signIn("credentials", {
       username,
       password,
-
     });
   } catch (error) {
     console.log(error);
-    return { error: "Failed to login" };
+    throw error;
   }
 };

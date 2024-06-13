@@ -12,8 +12,7 @@ const UserBar = () => {
   const { data, status } = useSession();
   // TEMP
 
-  const isAuth = status;
-  console.log(data);
+  const isAuth = status === "authenticated";
 
   useEffect(() => {
     openCart || openMobile
@@ -25,7 +24,7 @@ const UserBar = () => {
     <>
       <ul className={s.wrapper}>
         <li>
-          <Link href={isAuth === "authenticated" ? "/profile" : "/register"}>
+          <Link href={isAuth ? "/profile" : "/register"}>
             <Image
               src={`${
                 data?.user?.image! ? data.user.image : "/images/header/04.svg"
@@ -34,7 +33,7 @@ const UserBar = () => {
               height={24}
               alt="user btn"
               className={
-                isAuth === "authenticated" && data?.user?.image ? s.userImg : ""
+                isAuth && data?.user?.image ? s.userImg : ""
               }
             />
           </Link>
@@ -50,7 +49,7 @@ const UserBar = () => {
           </Link>
         </li>
         <li>
-          <Link href={isAuth === "authenticated" ? "/favorite" : "/register"}>
+          <Link href={isAuth ? "/favorite" : "/register"}>
             <Image
               src="/images/header/02.svg"
               width={23}

@@ -4,6 +4,7 @@ import { connectToDb } from "./connectToDB";
 import { User } from "./models";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
+import { authConfig } from "./auth.config";
 const login = async (credentials) => {
   try {
     connectToDb();
@@ -29,6 +30,7 @@ const login = async (credentials) => {
 };
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
+  ...authConfig,
   providers: [
     Google,
     CredentialsProvider({
@@ -37,8 +39,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           const user = await login(credentials);
           return user;
         } catch (error) {
-          console.log(error);
-          return { error: "Failed to Login" };
+          return null;
         }
       },
     }),
@@ -65,5 +66,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       }
       return true;
     },
+    ...authConfig.callbacks,
   },
 });

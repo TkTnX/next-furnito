@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/libs/models.js", "src/libs/connectToDB.js", "src/libs/actions.js", "src/libs/data.js", "src/libs/auth.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/libs/models.js", "src/libs/connectToDB.js", "src/libs/actions.js", "src/libs/data.js", "src/libs/auth.js", "src/middleware.Js"],
   "exclude": ["node_modules"]
 }

@@ -8,7 +8,7 @@ const MobileMenu = ({
   isAuth,
 }: {
   setOpenMobile: (b: boolean) => void;
-  isAuth: string;
+  isAuth: boolean;
 }) => {
   return (
     <div className={s.wrapper}>
@@ -25,7 +25,7 @@ const MobileMenu = ({
         <li>
           <Link
             onClick={() => setOpenMobile(false)}
-            href={isAuth === "authenticated" ? "/profile" : "/register"}
+            href={isAuth ? "/profile" : "/register"}
           >
             <Image
               src="/images/header/04.svg"
