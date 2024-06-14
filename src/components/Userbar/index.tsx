@@ -10,10 +10,8 @@ const UserBar = () => {
   const [openCart, setOpenCart] = useState(false);
   const [openMobile, setOpenMobile] = useState(false);
   const { data, status } = useSession();
-  // TEMP
 
   const isAuth = status === "authenticated";
-
   useEffect(() => {
     openCart || openMobile
       ? (document.body.style.overflow = "hidden")
@@ -32,9 +30,7 @@ const UserBar = () => {
               width={26}
               height={24}
               alt="user btn"
-              className={
-                isAuth && data?.user?.image ? s.userImg : ""
-              }
+              className={isAuth && data?.user?.image ? s.userImg : ""}
             />
           </Link>
         </li>
@@ -58,16 +54,21 @@ const UserBar = () => {
             />
           </Link>
         </li>
-        <li>
-          <button onClick={() => setOpenCart((prev) => !prev)}>
-            <Image
-              src="/images/header/03.svg"
-              width={23}
-              height={20}
-              alt="user btn"
-            />
-          </button>
-        </li>
+        {/* @ts-ignore */}
+        {data?.user?.isAdmin ? (
+          <Link href="/admin">Admin Panel</Link>
+        ) : (
+          <li>
+            <button onClick={() => setOpenCart((prev) => !prev)}>
+              <Image
+                src="/images/header/03.svg"
+                width={23}
+                height={20}
+                alt="user btn"
+              />
+            </button>
+          </li>
+        )}
       </ul>
       {openCart && <ModalCart setOpenCart={setOpenCart} />}
       <button
@@ -79,7 +80,12 @@ const UserBar = () => {
         <span></span>
       </button>
       {openMobile && (
-        <MobileMenu isAuth={isAuth} setOpenMobile={setOpenMobile} />
+        <MobileMenu
+          // @ts-ignore
+          isAdmin={data?.user?.isAdmin}
+          isAuth={isAuth}
+          setOpenMobile={setOpenMobile}
+        />
       )}
     </>
   );

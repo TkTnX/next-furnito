@@ -18,6 +18,7 @@
   @media (max-width: 768px) {
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
   }
   @media (max-width: 600px) {
     flex-direction: column;

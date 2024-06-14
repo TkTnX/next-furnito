@@ -51,7 +51,7 @@ const userSchema = mongoose.Schema(
       min: 5,
       max: 20,
     },
-    avatarUrl: {
+    image: {
       type: String,
     },
     isAdmin: {

@@ -6,9 +6,11 @@ import Image from "next/image";
 const MobileMenu = ({
   setOpenMobile,
   isAuth,
+  isAdmin,
 }: {
   setOpenMobile: (b: boolean) => void;
   isAuth: boolean;
+  isAdmin: boolean;
 }) => {
   return (
     <div className={s.wrapper}>
@@ -69,6 +71,11 @@ const MobileMenu = ({
           </Link>
         </li>
       </ul>
+      {isAdmin && (
+        <Link onClick={() => setOpenMobile(false)} href="/admin">
+          Admin panel
+        </Link>
+      )}
     </div>
   );
 };

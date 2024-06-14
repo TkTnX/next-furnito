@@ -1,0 +1,27 @@
+.profile {
+  display: grid;
+  gap: 20px;
+  text-align: center;
+}
+
+.avatar {
+  justify-self: center;
+}
+
+.signOut {
+  max-width: max-content;
+  margin: 30px auto;
+
+  button {
+    border: 1px solid var(--accent);
+    padding: 20px 40px;
+    border-radius: 15px;
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      background-color: var(--accent);
+      color: #fff;
+      border-radius: 5px;
+    }
+  }
+}

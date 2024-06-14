@@ -7,6 +7,7 @@ export const authConfig = {
     async jwt({ token, user }) {
       if (user) {
         (token.id = user.id), (token.isAdmin = user.isAdmin);
+        token.avatarUrl = user.avatarUrl;
       }
       return token;
     },
@@ -14,6 +15,7 @@ export const authConfig = {
       if (token) {
         session.user.id = token.id;
         session.user.isAdmin = token.isAdmin;
+        session.user.avatarUrl = token.avatarUrl;
       }
       return session;
     },
@@ -24,6 +26,7 @@ export const authConfig = {
         request.nextUrl?.pathname.startsWith("/register");
       const isOnFavPage = request.nextUrl?.pathname.startsWith("/favorite");
       const isOnLoginPage = request.nextUrl?.pathname.startsWith("/login");
+      const isOnProfilePage = request.nextUrl?.pathname.startsWith("/profile");
 
       // ONLY FOR ADMINS
 
@@ -39,6 +42,10 @@ export const authConfig = {
         return false;
       }
       if (isOnLoginPage && user) {
+        return Response.redirect(new URL("/", request.nextUrl));
+      }
+
+      if (isOnProfilePage && !user) {
         return Response.redirect(new URL("/", request.nextUrl));
       }
 
