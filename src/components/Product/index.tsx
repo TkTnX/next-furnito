@@ -12,17 +12,18 @@ export type ProductType = {
   slug: string;
   desc: string;
   sizes: string[];
+  isFav?: boolean;
 };
 
 const Product: React.FC<ProductType> = (props) => {
-  const { title, image, price, discount, slug, desc, _id } = props;
+  const { title, image, price, discount, slug, desc, isFav } = props;
   return (
-    <div className={s.item}>
+    <div className={`${s.item} ${isFav ? s.fav : ""}`}>
       <div className={s.img}>
         <Image src={image} sizes="any" alt={title} fill />
       </div>
       <div className={s.onHover}>
-        <Controls props={props} slug={slug} />
+        <Controls isFav={isFav} props={props} slug={slug} />
       </div>
       <div className={s.bottom}>
         <h5 className={s.title}>{title}</h5>

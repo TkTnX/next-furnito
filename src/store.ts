@@ -8,6 +8,12 @@ interface cartState {
   removeFromCart: (id: string) => void;
 }
 
+interface favStore {
+  favItems: ProductType[];
+  addToFav: (p: ProductType) => void;
+  removeFromFav: (id: string) => void;
+}
+
 const handleMathPrice = (set: any) => {
   set((state: cartState) => ({
     totalPrice: state.items.reduce(
@@ -35,5 +41,22 @@ export const useCartStore = create<cartState>((set, get) => ({
   removeFromCart: (id) => {
     set((state) => ({ items: state.items.filter((item) => item._id !== id) }));
     handleMathPrice(set);
+  },
+}));
+
+export const useFavStore = create<favStore>((set, get) => ({
+  favItems: [],
+  addToFav: (product) => {
+    const state = get();
+    set((state) => ({ favItems: [...state.favItems, product] }));
+    localStorage.setItem("favItems", JSON.stringify(state.favItems));
+  },
+  removeFromFav: (id) => {
+    const state = get();
+
+    set((state) => ({
+      favItems: state.favItems.filter((item) => item._id !== id),
+    }));
+    localStorage.setItem("favItems", JSON.stringify(state.favItems));
   },
 }));

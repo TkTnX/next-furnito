@@ -4,9 +4,9 @@ import StoreList from "../StoreList";
 import { getProducts } from "@/libs/data";
 
 const Shop = async () => {
+  const products = await getProducts();
   // TEMP
   const productsPerView = 20;
-  const products = await getProducts();
 
   if ("error" in products) {
     return;
